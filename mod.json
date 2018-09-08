@@ -1,0 +1,10 @@
+﻿{
+  "Id": "techpistol.gun",
+  "DisplayName": "techpistol",
+  "Author": "techpistol",
+  "Version": "1.0",
+  "Enable": true,
+  "AssemblyName": "techpistol.dll",
+  "EntryMethod": "techpistol.techpistol.Patch",
+  "Config": { }
+}
