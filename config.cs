@@ -8,7 +8,7 @@ public class config
     public float LaserDamage;
     public float LaserRange;
     public float HealthDetectionRange;
-    public float Scalerange;
+    public float ScaleRange;
     public float ScaleUpspeed;
     public float ScaleDownspeed;
 }

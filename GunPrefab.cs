@@ -81,17 +81,11 @@ namespace techpistol
                 PropulsionCannon build = CraftData.InstantiateFromPrefab(TechType.PropulsionCannon).GetComponent<PropulsionCannon>();
                 Welder laserloop = CraftData.InstantiateFromPrefab(TechType.Welder).GetComponent<Welder>();
                 VFXFabricating vfxfabricating = gun.FindChild("HandGun").AgComponent<VFXFabricating>();
-                Exosuit Exosuita = CraftData.InstantiateFromPrefab(TechType.Exosuit).GetComponent<Exosuit>();
-                var GetArmPrefabMethod = typeof(Exosuit).GetMethod("GetArmPrefab", BindingFlags.NonPublic | BindingFlags.Instance);;
-                var exo = (GameObject)GetArmPrefabMethod.Invoke(Exosuita, new object[] { TechType.ExosuitDrillArmModule });
-                biggun.Drillon = exo.GetComponent<ExosuitDrillArm>().loopHit;
-                UnityEngine.Object.Destroy(Exosuita);
                 vfxfabricating.localMinY = -3f;
                 vfxfabricating.localMaxY = 3f;
                 vfxfabricating.posOffset = new Vector3(0f, 0, 0f);
                 vfxfabricating.eulerOffset = new Vector3(0f, 90f, -90f);
                 vfxfabricating.scaleFactor = 1f;
-                biggun.grabbedEffect = build.grabbedEffect;
                 biggun.shoot1 = Boo.shootSound;
                 biggun.shoot2 = Boo2.fireSound;
                 biggun.xulikai = Boo2.chargeBegin;

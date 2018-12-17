@@ -1,10 +1,10 @@
 {
-  "CannonDamage":"400",
+  "CannonDamage":"150",
   "CannonExplosionDamageRange":"15",
-  "LaserDamage":"3",
+  "LaserDamage":"1.5",
   "LaserRange":"40",
   "HealthDetectionRange":"40",
-  "Scalerange":"40",
+  "ScaleRange":"40",
   "ScaleUpspeed":"0.02",
   "ScaleDownspeed":"0.02"
 }
