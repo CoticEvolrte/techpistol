@@ -17,8 +17,6 @@ namespace techpistol
         public FMODAsset modechang;
         public ParticleSystem[] par = new ParticleSystem[10];
         public LineRenderer[] Line = new LineRenderer[10];
-        public GameObject Free;
-        public List<GameObject> Freelist;
         public GameObject dis;
         public bool CannonStart = false;
         public bool LaserStart = false;
@@ -153,17 +151,6 @@ namespace techpistol
         }
         public void LateUpdate()
         {
-            if(mode == 3)
-            {
-                foreach (GameObject con in Freelist)
-                {
-                    if (con != Free || (!Scalebig && !Scalesamm))
-                    {
-                        con.GetComponent<Rigidbody>().isKinematic = false;
-                        Freelist.Remove(con);
-                    }
-                }
-            }
             if (isDrawn)
             {
                 if (energyMixin.charge > 0f)
@@ -222,12 +209,6 @@ namespace techpistol
                                 if (UWE.Utils.GetEntityRoot(TargetB).GetComponent<Creature>() != null)
                                 {
                                     UWE.Utils.GetEntityRoot(TargetB).GetComponent<Creature>().SetScale(size + cof.ScaleUpspeed);
-                                    if (Free != UWE.Utils.GetEntityRoot(TargetB))
-                                    {
-                                        Free = UWE.Utils.GetEntityRoot(TargetB);
-                                        Free.GetComponent<Rigidbody>().isKinematic = true;
-                                        Freelist.Add(Free);
-                                    }
                                 }
                                 else
                                 {
@@ -245,12 +226,6 @@ namespace techpistol
                                 if (UWE.Utils.GetEntityRoot(TargetB).GetComponent<Creature>() != null)
                                 {
                                     UWE.Utils.GetEntityRoot(TargetB).GetComponent<Creature>().SetScale(size - cof.ScaleDownspeed);
-                                    if (Free != UWE.Utils.GetEntityRoot(TargetB))
-                                    {
-                                        Free = UWE.Utils.GetEntityRoot(TargetB);
-                                        Free.GetComponent<Rigidbody>().isKinematic = true;
-                                        Freelist.Add(Free);
-                                    }
                                 }
                                 else
                                 {
