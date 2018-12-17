@@ -54,6 +54,7 @@
     <Compile Include="config.cs" />
     <Compile Include="gun.cs" />
     <Compile Include="GunPrefab.cs" />
+    <Compile Include="Path.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
